@@ -1,15 +1,11 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>Logo Design</title>
+  <title>Name Design</title>
   <style>
     /* CSS Styling */
     body {
       background-color: #f0f0f0;
-      background-image: url('https://w0.peakpx.com/wallpaper/196/34/HD-wallpaper-virat-kohli-in-blue-jersey-virat-kohli-blue-indian-cricket-king-kohli-sports-thumbnail.jpg'); /* Set the background image URL here */
-      background-repeat: no-repeat;
-      background-size: cover;
-      background-position: center;
       display: flex;
       justify-content: center;
       align-items: center;
@@ -18,9 +14,9 @@
       padding: 0;
     }
     
-    .logo {
-      font-family: 'Arial', sans-serif;
-      font-size: 48px;
+    .name {
+      font-family: 'Verdana', sans-serif;
+      font-size: 72px;
       color: #ff9900;
       text-transform: uppercase;
       letter-spacing: 10px;
@@ -30,21 +26,7 @@
   </style>
 </head>
 <body>
-  <div class="logo">KING KOHLI</div>
-  <input type="file" accept="image/jpeg" onchange="setBackground(event)" style="margin-top: 20px;">
-  
-  <script>
-    function setBackground(event) {
-      const file = event.target.files[0];
-      const reader = new FileReader();
-      
-      reader.onload = function(e) {
-        document.body.style.backgroundImage = `url(${e.target.result})`;
-      }
-      
-      reader.readAsDataURL(file);
-    }
-  </script>
+  <div class="name">KING KOHLI</div>
 </body>
 </html>
 
