@@ -1,11 +1,15 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>Movie Title Design</title>
+  <title>Logo Design</title>
   <style>
     /* CSS Styling */
     body {
-      background-color: #000;
+      background-color: #f0f0f0;
+      background-image: url(https://www.peakpx.com/en/hd-wallpaper-desktop-eyfjd''); /* Set the background image URL here */
+      background-repeat: no-repeat;
+      background-size: cover;
+      background-position: center;
       display: flex;
       justify-content: center;
       align-items: center;
@@ -14,19 +18,33 @@
       padding: 0;
     }
     
-    .title {
-      font-family: 'Impact', Charcoal, sans-serif;
-      font-size: 72px;
+    .logo {
+      font-family: 'Arial', sans-serif;
+      font-size: 48px;
       color: #ff9900;
       text-transform: uppercase;
-      letter-spacing: 8px;
+      letter-spacing: 10px;
       text-align: center;
-      text-shadow: 3px 3px 4px rgba(0, 0, 0, 0.8);
+      margin-top: 100px;
     }
   </style>
 </head>
 <body>
-  <div class="title">KING KOHLI</div>
+  <div class="logo">KING KOHLI</div>
+  <input type="file" accept="image/jpeg" onchange="setBackground(event)" style="margin-top: 20px;">
+  
+  <script>
+    function setBackground(event) {
+      const file = event.target.files[0];
+      const reader = new FileReader();
+      
+      reader.onload = function(e) {
+        document.body.style.backgroundImage = `url(${e.target.result})`;
+      }
+      
+      reader.readAsDataURL(file);
+    }
+  </script>
 </body>
 </html>
 
