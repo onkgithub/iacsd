@@ -1,32 +1,102 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Dynamic Website Example</title>
-    <style>
-        body {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            height: 100vh;
-        }
-
-        form {
-            text-align: center;
-        }
-    </style>
+  <title>RCB Logo Design</title>
+  <style>
+    /* CSS for RCB logo design */
+    #logo {
+      width: 300px;
+      height: 300px;
+      background-color: #000;
+      border-radius: 50%;
+      position: relative;
+    }
+    
+    #inner-circle {
+      width: 240px;
+      height: 240px;
+      background-color: #DA1E37;
+      border-radius: 50%;
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+    }
+    
+    #outer-circle {
+      width: 220px;
+      height: 220px;
+      background-color: #000;
+      border-radius: 50%;
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+    }
+    
+    #letter-r {
+      width: 120px;
+      height: 120px;
+      background-color: #000;
+      border-radius: 50%;
+      position: absolute;
+      top: 20px;
+      left: 20px;
+      transform: rotate(45deg);
+    }
+    
+    #letter-c {
+      width: 120px;
+      height: 120px;
+      background-color: #DA1E37;
+      border-radius: 50%;
+      position: absolute;
+      bottom: 20px;
+      right: 20px;
+    }
+    
+    #letter-b {
+      width: 80px;
+      height: 80px;
+      background-color: #000;
+      border-radius: 50%;
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+    }
+    
+    #letter-b:before,
+    #letter-b:after {
+      content: "";
+      display: block;
+      position: absolute;
+      background-color: #DA1E37;
+    }
+    
+    #letter-b:before {
+      width: 80px;
+      height: 20px;
+      top: 30px;
+      left: 0;
+    }
+    
+    #letter-b:after {
+      width: 20px;
+      height: 80px;
+      top: 0;
+      left: 30px;
+    }
+  </style>
 </head>
 <body>
-    <h1>Add Student</h1>
-
-    <form method="POST" action="process.php">
-        <label for="name">Name:</label>
-        <input type="text" name="name" id="name" required><br><br>
-
-        <label for="roll">Roll No:</label>
-        <input type="text" name="roll" id="roll" required><br><br>
-
-        <input type="submit" value="Add Student">
-    </form>
+  <div id="logo">
+    <div id="inner-circle"></div>
+    <div id="outer-circle"></div>
+    <div id="letter-r"></div>
+    <div id="letter-c"></div>
+    <div id="letter-b"></div>
+  </div>
 </body>
 </html>
 
