@@ -68,7 +68,7 @@
       <div class="col-md-6">
         <div class="card">
           <div class="card-header">
-            <h2>Employee Login</h2>
+            <h2 id="formTitle">Employee Login</h2>
           </div>
           <div class="card-body">
             <form id="loginForm">
@@ -80,24 +80,24 @@
                 <label for="password">Password</label>
                 <input type="password" class="form-control" id="password" required>
               </div>
-              <button type="submit" class="btn btn-primary btn-block">Login</button>
+              <button type="submit" class="btn btn-primary btn-block" id="submitButton">Login</button>
             </form>
             <div class="login-link">
-              Don't have an account? <a href="#signupForm">Sign up</a>
+              Don't have an account? <a href="#" id="signupLink">Sign up</a>
             </div>
           </div>
         </div>
       </div>
     </div>
 
-    <div class="row justify-content-center">
+    <div class="row justify-content-center" id="signupContainer" style="display: none;">
       <div class="col-md-6 mt-4">
-        <div class="card" id="signupForm">
+        <div class="card">
           <div class="card-header">
             <h2>Employee Signup</h2>
           </div>
           <div class="card-body">
-            <form>
+            <form id="signupForm">
               <div class="form-group">
                 <label for="name">Name</label>
                 <input type="text" class="form-control" id="name" required>
@@ -116,6 +116,9 @@
               </div>
               <button type="submit" class="btn btn-primary btn-block">Signup</button>
             </form>
+            <div class="login-link">
+              Already have an account? <a href="#" id="loginLink">Login</a>
+            </div>
           </div>
         </div>
       </div>
@@ -123,9 +126,24 @@
   </div>
 
   <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
-  <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.3/dist/umd/popper.min.js"></script>
   <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
   <script>
+    // Switch to Signup form
+    document.getElementById('signupLink').addEventListener('click', function (event) {
+      event.preventDefault(); // Prevent default link behavior
+      document.getElementById('formTitle').textContent = 'Employee Signup';
+      document.getElementById('loginForm').style.display = 'none';
+      document.getElementById('signupContainer').style.display = 'block';
+    });
+
+    // Switch to Login form
+    document.getElementById('loginLink').addEventListener('click', function (event) {
+      event.preventDefault(); // Prevent default link behavior
+      document.getElementById('formTitle').textContent = 'Employee Login';
+      document.getElementById('loginForm').style.display = 'block';
+      document.getElementById('signupContainer').style.display = 'none';
+    });
+
     // Client-side validation for login
     document.getElementById('loginForm').addEventListener('submit', function (event) {
       event.preventDefault(); // Prevent form submission
